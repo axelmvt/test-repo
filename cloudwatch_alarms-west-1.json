@@ -1,0 +1,318 @@
+{
+    "MetricAlarms": [
+        {
+            "AlarmName": "Lost Recordings",
+            "AlarmArn": "arn:aws:cloudwatch:us-west-1:222225274634:alarm:Lost Recordings",
+            "AlarmConfigurationUpdatedTimestamp": "2024-02-05T21:59:15.517000+00:00",
+            "ActionsEnabled": true,
+            "OKActions": [],
+            "AlarmActions": [
+                "arn:aws:sns:us-west-1:222225274634:CloudWatch_Alarms_Production"
+            ],
+            "InsufficientDataActions": [],
+            "StateValue": "INSUFFICIENT_DATA",
+            "StateReason": "Insufficient Data: 1 datapoint was unknown.",
+            "StateReasonData": "{\"version\":\"1.0\",\"queryDate\":\"2024-02-14T17:14:19.323+0000\",\"period\":300,\"recentDatapoints\":[],\"threshold\":1.0,\"evaluatedDatapoints\":[{\"timestamp\":\"2024-02-14T17:09:00.000+0000\"}]}",
+            "StateUpdatedTimestamp": "2024-02-14T17:14:19.327000+00:00",
+            "Dimensions": [],
+            "EvaluationPeriods": 1,
+            "DatapointsToAlarm": 1,
+            "Threshold": 1.0,
+            "ComparisonOperator": "GreaterThanThreshold",
+            "TreatMissingData": "missing",
+            "Metrics": [
+                {
+                    "Id": "e1",
+                    "Expression": "m1-m2",
+                    "Label": "Lost Recordings",
+                    "ReturnData": true
+                },
+                {
+                    "Id": "m1",
+                    "MetricStat": {
+                        "Metric": {
+                            "Namespace": "YourNamespace",
+                            "MetricName": "TotalStartedRecordings",
+                            "Dimensions": []
+                        },
+                        "Period": 300,
+                        "Stat": "Average"
+                    },
+                    "ReturnData": false
+                },
+                {
+                    "Id": "m2",
+                    "MetricStat": {
+                        "Metric": {
+                            "Namespace": "YourNamespace",
+                            "MetricName": "TotalUploadedRecordings",
+                            "Dimensions": []
+                        },
+                        "Period": 300,
+                        "Stat": "Average"
+                    },
+                    "ReturnData": false
+                }
+            ],
+            "StateTransitionedTimestamp": "2024-02-14T17:14:19.327000+00:00"
+        },
+        {
+            "AlarmName": "StatusCheck: EQA Database Server",
+            "AlarmArn": "arn:aws:cloudwatch:us-west-1:222225274634:alarm:StatusCheck: EQA Database Server",
+            "AlarmDescription": "Instance Status Check",
+            "AlarmConfigurationUpdatedTimestamp": "2023-11-30T21:15:39.087000+00:00",
+            "ActionsEnabled": true,
+            "OKActions": [],
+            "AlarmActions": [
+                "arn:aws:sns:us-west-1:222225274634:CloudWatch_Alarms_Production",
+                "arn:aws:swf:us-west-1:222225274634:action/actions/AWS_EC2.InstanceId.Reboot/1.0"
+            ],
+            "InsufficientDataActions": [],
+            "StateValue": "INSUFFICIENT_DATA",
+            "StateReason": "Insufficient Data: 1 datapoint was unknown.",
+            "StateReasonData": "{\"version\":\"1.0\",\"queryDate\":\"2024-07-11T18:52:17.816+0000\",\"statistic\":\"Average\",\"period\":60,\"recentDatapoints\":[],\"threshold\":0.0,\"evaluatedDatapoints\":[{\"timestamp\":\"2024-07-11T18:51:00.000+0000\"}]}",
+            "StateUpdatedTimestamp": "2024-07-11T18:52:17.817000+00:00",
+            "MetricName": "StatusCheckFailed_Instance",
+            "Namespace": "AWS/EC2",
+            "Statistic": "Average",
+            "Dimensions": [
+                {
+                    "Name": "InstanceId",
+                    "Value": "i-0e9003c54a565fe62"
+                }
+            ],
+            "Period": 60,
+            "EvaluationPeriods": 1,
+            "DatapointsToAlarm": 1,
+            "Threshold": 0.0,
+            "ComparisonOperator": "GreaterThanThreshold",
+            "TreatMissingData": "missing",
+            "StateTransitionedTimestamp": "2024-07-11T18:52:17.817000+00:00"
+        },
+        {
+            "AlarmName": "StatusCheck: EQA Production Web Server",
+            "AlarmArn": "arn:aws:cloudwatch:us-west-1:222225274634:alarm:StatusCheck: EQA Production Web Server",
+            "AlarmDescription": "Instance Status Check",
+            "AlarmConfigurationUpdatedTimestamp": "2021-07-26T17:00:58.207000+00:00",
+            "ActionsEnabled": true,
+            "OKActions": [],
+            "AlarmActions": [
+                "arn:aws:sns:us-west-1:222225274634:CloudWatch_Alarms_Production"
+            ],
+            "InsufficientDataActions": [],
+            "StateValue": "INSUFFICIENT_DATA",
+            "StateReason": "Insufficient Data: 1 datapoint was unknown.",
+            "StateReasonData": "{\"version\":\"1.0\",\"queryDate\":\"2024-03-05T21:14:48.810+0000\",\"statistic\":\"Average\",\"period\":60,\"recentDatapoints\":[],\"threshold\":0.0,\"evaluatedDatapoints\":[{\"timestamp\":\"2024-03-05T21:13:00.000+0000\"}]}",
+            "StateUpdatedTimestamp": "2024-03-05T21:14:48.813000+00:00",
+            "MetricName": "StatusCheckFailed_Instance",
+            "Namespace": "AWS/EC2",
+            "Statistic": "Average",
+            "Dimensions": [
+                {
+                    "Name": "InstanceId",
+                    "Value": "i-04a620ae7b6f7e313"
+                }
+            ],
+            "Period": 60,
+            "EvaluationPeriods": 1,
+            "DatapointsToAlarm": 1,
+            "Threshold": 0.0,
+            "ComparisonOperator": "GreaterThanThreshold",
+            "TreatMissingData": "missing",
+            "StateTransitionedTimestamp": "2024-03-05T21:14:48.813000+00:00"
+        },
+        {
+            "AlarmName": "StatusCheck: EQA Webfront-a3",
+            "AlarmArn": "arn:aws:cloudwatch:us-west-1:222225274634:alarm:StatusCheck: EQA Webfront-a3",
+            "AlarmDescription": "Instance Status Check",
+            "AlarmConfigurationUpdatedTimestamp": "2021-07-26T16:50:07.169000+00:00",
+            "ActionsEnabled": true,
+            "OKActions": [],
+            "AlarmActions": [
+                "arn:aws:sns:us-west-1:222225274634:CloudWatch_Alarms_Production"
+            ],
+            "InsufficientDataActions": [],
+            "StateValue": "INSUFFICIENT_DATA",
+            "StateReason": "Insufficient Data: 1 datapoint was unknown.",
+            "StateReasonData": "{\"version\":\"1.0\",\"queryDate\":\"2022-11-10T21:43:12.726+0000\",\"statistic\":\"Average\",\"period\":60,\"recentDatapoints\":[],\"threshold\":0.0,\"evaluatedDatapoints\":[{\"timestamp\":\"2022-11-10T21:42:00.000+0000\"}]}",
+            "StateUpdatedTimestamp": "2022-11-10T21:43:12.730000+00:00",
+            "MetricName": "StatusCheckFailed_Instance",
+            "Namespace": "AWS/EC2",
+            "Statistic": "Average",
+            "Dimensions": [
+                {
+                    "Name": "InstanceId",
+                    "Value": "i-05316fc7bf44ba7c2"
+                }
+            ],
+            "Period": 60,
+            "EvaluationPeriods": 1,
+            "DatapointsToAlarm": 1,
+            "Threshold": 0.0,
+            "ComparisonOperator": "GreaterThanThreshold",
+            "TreatMissingData": "missing",
+            "StateTransitionedTimestamp": "2022-11-10T21:43:12.730000+00:00"
+        },
+        {
+            "AlarmName": "StatusCheck: Envision-Database-Srvr",
+            "AlarmArn": "arn:aws:cloudwatch:us-west-1:222225274634:alarm:StatusCheck: Envision-Database-Srvr",
+            "AlarmDescription": "Instance Status Check",
+            "AlarmConfigurationUpdatedTimestamp": "2022-08-31T19:34:22.954000+00:00",
+            "ActionsEnabled": true,
+            "OKActions": [],
+            "AlarmActions": [
+                "arn:aws:sns:us-west-1:222225274634:CloudWatch_Alarms_Production"
+            ],
+            "InsufficientDataActions": [],
+            "StateValue": "INSUFFICIENT_DATA",
+            "StateReason": "Insufficient Data: 1 datapoint was unknown.",
+            "StateReasonData": "{\"version\":\"1.0\",\"queryDate\":\"2023-10-18T14:46:15.026+0000\",\"statistic\":\"Average\",\"period\":60,\"recentDatapoints\":[],\"threshold\":0.0,\"evaluatedDatapoints\":[{\"timestamp\":\"2023-10-18T14:45:00.000+0000\"}]}",
+            "StateUpdatedTimestamp": "2023-10-18T14:46:15.027000+00:00",
+            "MetricName": "StatusCheckFailed_Instance",
+            "Namespace": "AWS/EC2",
+            "Statistic": "Average",
+            "Dimensions": [
+                {
+                    "Name": "InstanceId",
+                    "Value": "i-01bc215ba13b48a8d"
+                }
+            ],
+            "Period": 60,
+            "EvaluationPeriods": 1,
+            "DatapointsToAlarm": 1,
+            "Threshold": 0.0,
+            "ComparisonOperator": "GreaterThanThreshold",
+            "TreatMissingData": "missing",
+            "StateTransitionedTimestamp": "2023-10-18T14:46:15.027000+00:00"
+        },
+        {
+            "AlarmName": "StatusCheck: FTP Server",
+            "AlarmArn": "arn:aws:cloudwatch:us-west-1:222225274634:alarm:StatusCheck: FTP Server",
+            "AlarmDescription": "Instance Status Check",
+            "AlarmConfigurationUpdatedTimestamp": "2021-07-26T16:59:12.899000+00:00",
+            "ActionsEnabled": true,
+            "OKActions": [],
+            "AlarmActions": [
+                "arn:aws:sns:us-west-1:222225274634:CloudWatch_Alarms_Production"
+            ],
+            "InsufficientDataActions": [],
+            "StateValue": "INSUFFICIENT_DATA",
+            "StateReason": "Insufficient Data: 1 datapoint was unknown.",
+            "StateReasonData": "{\"version\":\"1.0\",\"queryDate\":\"2023-06-09T16:38:16.265+0000\",\"statistic\":\"Average\",\"period\":60,\"recentDatapoints\":[],\"threshold\":0.0,\"evaluatedDatapoints\":[{\"timestamp\":\"2023-06-09T16:37:00.000+0000\"}]}",
+            "StateUpdatedTimestamp": "2023-06-09T16:38:16.267000+00:00",
+            "MetricName": "StatusCheckFailed_Instance",
+            "Namespace": "AWS/EC2",
+            "Statistic": "Average",
+            "Dimensions": [
+                {
+                    "Name": "InstanceId",
+                    "Value": "i-035bb4e720ba294e4"
+                }
+            ],
+            "Period": 60,
+            "EvaluationPeriods": 1,
+            "DatapointsToAlarm": 1,
+            "Threshold": 0.0,
+            "ComparisonOperator": "GreaterThanThreshold",
+            "TreatMissingData": "missing",
+            "StateTransitionedTimestamp": "2023-06-09T16:38:16.267000+00:00"
+        },
+        {
+            "AlarmName": "StatusCheck: HGV-APPServ",
+            "AlarmArn": "arn:aws:cloudwatch:us-west-1:222225274634:alarm:StatusCheck: HGV-APPServ",
+            "AlarmDescription": "Instance Status Check",
+            "AlarmConfigurationUpdatedTimestamp": "2021-07-26T16:54:31.258000+00:00",
+            "ActionsEnabled": true,
+            "OKActions": [],
+            "AlarmActions": [
+                "arn:aws:sns:us-west-1:222225274634:CloudWatch_Alarms_Production"
+            ],
+            "InsufficientDataActions": [],
+            "StateValue": "INSUFFICIENT_DATA",
+            "StateReason": "Insufficient Data: 1 datapoint was unknown.",
+            "StateReasonData": "{\"version\":\"1.0\",\"queryDate\":\"2023-01-20T21:57:33.244+0000\",\"statistic\":\"Average\",\"period\":60,\"recentDatapoints\":[],\"threshold\":0.0,\"evaluatedDatapoints\":[{\"timestamp\":\"2023-01-20T21:56:00.000+0000\"}]}",
+            "StateUpdatedTimestamp": "2023-01-20T21:57:33.246000+00:00",
+            "MetricName": "StatusCheckFailed_Instance",
+            "Namespace": "AWS/EC2",
+            "Statistic": "Average",
+            "Dimensions": [
+                {
+                    "Name": "InstanceId",
+                    "Value": "i-6cbe52d9"
+                }
+            ],
+            "Period": 60,
+            "EvaluationPeriods": 1,
+            "DatapointsToAlarm": 1,
+            "Threshold": 0.0,
+            "ComparisonOperator": "GreaterThanThreshold",
+            "TreatMissingData": "missing",
+            "StateTransitionedTimestamp": "2023-01-20T21:57:33.246000+00:00"
+        },
+        {
+            "AlarmName": "StatusCheck: HGV-Kiosk-WebSrvr",
+            "AlarmArn": "arn:aws:cloudwatch:us-west-1:222225274634:alarm:StatusCheck: HGV-Kiosk-WebSrvr",
+            "AlarmConfigurationUpdatedTimestamp": "2021-07-26T16:47:21.783000+00:00",
+            "ActionsEnabled": true,
+            "OKActions": [],
+            "AlarmActions": [
+                "arn:aws:sns:us-west-1:222225274634:CloudWatch_Alarms_Production"
+            ],
+            "InsufficientDataActions": [],
+            "StateValue": "INSUFFICIENT_DATA",
+            "StateReason": "Insufficient Data: 1 datapoint was unknown.",
+            "StateReasonData": "{\"version\":\"1.0\",\"queryDate\":\"2022-09-29T23:02:49.626+0000\",\"statistic\":\"Average\",\"period\":60,\"recentDatapoints\":[],\"threshold\":0.0,\"evaluatedDatapoints\":[{\"timestamp\":\"2022-09-29T23:01:00.000+0000\"}]}",
+            "StateUpdatedTimestamp": "2022-09-29T23:02:49.628000+00:00",
+            "MetricName": "StatusCheckFailed_Instance",
+            "Namespace": "AWS/EC2",
+            "Statistic": "Average",
+            "Dimensions": [
+                {
+                    "Name": "InstanceId",
+                    "Value": "i-6f908aac"
+                }
+            ],
+            "Period": 60,
+            "EvaluationPeriods": 1,
+            "DatapointsToAlarm": 1,
+            "Threshold": 0.0,
+            "ComparisonOperator": "GreaterThanThreshold",
+            "TreatMissingData": "missing",
+            "StateTransitionedTimestamp": "2022-09-29T23:02:49.628000+00:00"
+        },
+        {
+            "AlarmName": "StatusCheck: HGV-Table-FTPSrvr",
+            "AlarmArn": "arn:aws:cloudwatch:us-west-1:222225274634:alarm:StatusCheck: HGV-Table-FTPSrvr",
+            "AlarmDescription": "Instance Status Check",
+            "AlarmConfigurationUpdatedTimestamp": "2022-08-31T19:33:25.068000+00:00",
+            "ActionsEnabled": true,
+            "OKActions": [],
+            "AlarmActions": [
+                "arn:aws:sns:us-west-1:222225274634:CloudWatch_Alarms_Production"
+            ],
+            "InsufficientDataActions": [],
+            "StateValue": "INSUFFICIENT_DATA",
+            "StateReason": "Insufficient Data: 1 datapoint was unknown.",
+            "StateReasonData": "{\"version\":\"1.0\",\"queryDate\":\"2024-06-17T18:40:05.921+0000\",\"statistic\":\"Average\",\"period\":60,\"recentDatapoints\":[],\"threshold\":0.0,\"evaluatedDatapoints\":[{\"timestamp\":\"2024-06-17T18:39:00.000+0000\"}]}",
+            "StateUpdatedTimestamp": "2024-06-17T18:40:05.923000+00:00",
+            "MetricName": "StatusCheckFailed_Instance",
+            "Namespace": "AWS/EC2",
+            "Statistic": "Average",
+            "Dimensions": [
+                {
+                    "Name": "InstanceId",
+                    "Value": "i-0dcc4049aff7e434e"
+                }
+            ],
+            "Period": 60,
+            "EvaluationPeriods": 1,
+            "DatapointsToAlarm": 1,
+            "Threshold": 0.0,
+            "ComparisonOperator": "GreaterThanThreshold",
+            "TreatMissingData": "missing",
+            "StateTransitionedTimestamp": "2024-06-17T18:40:05.923000+00:00"
+        }
+    ],
+    "CompositeAlarms": []
+}
+
